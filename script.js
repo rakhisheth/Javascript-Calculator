@@ -66,8 +66,8 @@ window.onload = function() {
   document.getElementById("clear").addEventListener("click", function() {
     numStr = "";
     finalCalc = "";
-    displayScreen.innerHTML = numStr;
-    realTimeDisplay.innerHTML = finalCalc;
+    displayScreen.innerHTML = 0;
+    realTimeDisplay.innerHTML = 0;
   });
 
   // EQUAL
