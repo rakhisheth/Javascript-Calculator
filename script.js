@@ -7,6 +7,8 @@ window.onload = function() {
   let displayScreen = document.getElementById("display");
   let realTimeDisplay = document.getElementById("rt-update");
 
+  let calcRegex = /(\-?\d+\.?\d+)([\+\-\*\/](\-?\d+\.?\d+))+/;
+
   let obj = {
     1: document.getElementById("n1"),
     2: document.getElementById("n2"),
@@ -47,18 +49,23 @@ window.onload = function() {
     4: document.getElementById("divide")
   };
 
-  Object.keys(actions).forEach(j =>
+  Object.keys(actions).forEach(j => {
     actions[j].addEventListener("click", () => {
       numStr += actions[j].innerHTML;
       displayScreen.innerHTML = numStr;
-    })
-  );
+      // if (/\d/.test(numStr.slice(-1))) {
+      //   document.getElementById("decimal").disabled = false;
+      // }
+    });
+  });
 
   // DECIMAL
 
   document.getElementById("decimal").addEventListener("click", () => {
     numStr += ".";
     displayScreen.innerHTML = numStr;
+    // ONE DECIMAL PER NUMBER
+    document.getElementById("decimal").disabled = true;
   });
 
   // CLEAR
@@ -68,15 +75,16 @@ window.onload = function() {
     finalCalc = "";
     displayScreen.innerHTML = 0;
     realTimeDisplay.innerHTML = 0;
+    document.getElementById("decimal").disabled = false;
   });
 
   // EQUAL
 
   document.getElementById("equal").addEventListener("click", () => {
+    if (numStr == "") return 0;
     let result = eval(numStr);
-    let final = numStr;
-    displayScreen.innerHTML = final;
-    document.getElementById("rt-update").innerHTML = result;
+    displayScreen.innerHTML = result;
+    realTimeDisplay.innerHTML = "";
     clear();
   });
 };
