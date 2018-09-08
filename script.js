@@ -7,8 +7,6 @@ window.onload = function() {
   let displayScreen = document.getElementById("display");
   let realTimeDisplay = document.getElementById("rt-update");
 
-  let calcRegex = /(\-?\d+\.?\d+)([\+\-\*\/](\-?\d+\.?\d+))+/;
-
   let obj = {
     1: document.getElementById("n1"),
     2: document.getElementById("n2"),
@@ -53,9 +51,6 @@ window.onload = function() {
     actions[j].addEventListener("click", () => {
       numStr += actions[j].innerHTML;
       displayScreen.innerHTML = numStr;
-      // if (/\d/.test(numStr.slice(-1))) {
-      //   document.getElementById("decimal").disabled = false;
-      // }
     });
   });
 

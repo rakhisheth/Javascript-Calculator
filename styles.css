@@ -46,15 +46,29 @@ button:hover {
   font: 70px Tenor Sans;
   text-align: right;
   color: white;
-  /* word-wrap: break-word; */
+  overflow-x: scroll;
 }
+
+/* Scroll */
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*  */
 
 #rt-update {
   text-align: right;
   font: 40px Tenor Sans;
   color: rgb(255, 249, 213);
   opacity: 0.4;
-  /* word-wrap: break-word; */
 }
 
 @media (max-width: 575px) {
@@ -74,20 +88,4 @@ button:hover {
     font-size: 20px;
     margin: 10px;
   }
-}
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
-#display {
-  overflow-x: scroll;
 }
