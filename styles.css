@@ -11,8 +11,7 @@ body {
 .container {
   height: 500px;
   width: 500px;
-  border-radius: 5%;
-  padding: 20px;
+  margin-top: 50px;
 }
 
 .row {
@@ -49,6 +48,13 @@ button:hover {
   overflow-x: scroll;
 }
 
+#rt-update {
+  text-align: right;
+  font: 40px Tenor Sans;
+  color: rgb(255, 249, 213);
+  opacity: 0.4;
+  overflow-x: scroll;
+}
 /* Scroll */
 
 ::-webkit-scrollbar {
@@ -63,13 +69,6 @@ button:hover {
 }
 
 /*  */
-
-#rt-update {
-  text-align: right;
-  font: 40px Tenor Sans;
-  color: rgb(255, 249, 213);
-  opacity: 0.4;
-}
 
 @media (max-width: 575px) {
   .container {
